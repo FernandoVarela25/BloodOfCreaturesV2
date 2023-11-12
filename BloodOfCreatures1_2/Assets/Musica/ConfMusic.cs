@@ -8,8 +8,8 @@ public class MusicPlayer : MonoBehaviour
     // Nombre de la escena en la que no se reproducirá la música
     public string sceneToMute = "SampleScene";
 
-    // Nombre de la escena en la que la música no se reiniciará
-    public string sceneToPauseMusic = "Creditos";
+    // Nombres de las escenas en las que la música no se reiniciará
+    public string[] scenesToPauseMusic = { "Creditos", "Controles" };
 
     private AudioSource audioSource;
 
@@ -64,9 +64,9 @@ public class MusicPlayer : MonoBehaviour
             // Cargar la música específica de "SampleScene"
             LoadMusic(musicFileNameSampleScene);
         }
-        else if (scene.name != sceneToPauseMusic)
+        else if (!IsSceneInList(scene.name, scenesToPauseMusic))
         {
-            // Si no es la escena de pausa de música, cargar la música inicial
+            // Si no es una escena en la lista de pausa de música, cargar la música inicial
             LoadMusic(musicFileName);
         }
     }
@@ -91,5 +91,18 @@ public class MusicPlayer : MonoBehaviour
         {
             Debug.LogError("No se pudo cargar la música. Asegúrate de que el nombre del archivo sea correcto y que esté en la carpeta Resources.");
         }
+    }
+
+    // Función para verificar si la escena está en la lista
+    private bool IsSceneInList(string sceneName, string[] sceneList)
+    {
+        foreach (string scene in sceneList)
+        {
+            if (scene == sceneName)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
