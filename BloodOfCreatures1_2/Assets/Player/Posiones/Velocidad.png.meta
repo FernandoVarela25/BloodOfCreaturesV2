@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ad7bfad9c3fa0743937e0c6e5f392ac
+guid: 137f47ff9ba6f284e8952895e365b3bd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Personaje Octavo_0
+      name: Velocidad_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 0
-        width: 40
-        height: 62
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6edea1a5c127bab4c9c84fcb12a02782
-      internalID: 1382653375
+      spriteID: 2b438bc13d0450d4b9388bc9680fde97
+      internalID: -1022694144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_1
+      name: Velocidad_1
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 40
-        height: 62
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 478257e9b62662345a0fcb2376c642b1
-      internalID: 171009097
+      spriteID: 1fa876f05e46fc8449970e4c53521435
+      internalID: -1991369015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_2
+      name: Velocidad_2
       rect:
         serializedVersion: 2
-        x: 198
-        y: 0
-        width: 40
-        height: 62
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94aebd9b5f163fd40a451621e2346781
-      internalID: 673615054
+      spriteID: 6ecf91f022a1b2e4e9703ac760f21408
+      internalID: -459097444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_3
+      name: Velocidad_3
       rect:
         serializedVersion: 2
-        x: 294
-        y: 0
-        width: 40
-        height: 62
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f5bc3cdf06c854428c4652fc0d5453e
-      internalID: -591658196
+      spriteID: 764904b90bce6e340971390eddc24343
+      internalID: 89895246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_4
+      name: Velocidad_4
       rect:
         serializedVersion: 2
-        x: 390
-        y: 0
-        width: 40
-        height: 62
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4439902379686444a8fd7b316b2845a1
-      internalID: -261196513
+      spriteID: 95eb6e69b565b8948837a63a970873df
+      internalID: -591047537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_5
+      name: Velocidad_5
       rect:
         serializedVersion: 2
-        x: 486
-        y: 0
-        width: 40
-        height: 62
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e6fe488b1903f41a4a713f81d68206
-      internalID: -427374107
+      spriteID: 64f60b3733492bc48aaea751f37dd95a
+      internalID: -1725104318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_6
+      name: Velocidad_6
       rect:
         serializedVersion: 2
-        x: 582
+        x: 0
         y: 0
-        width: 40
-        height: 62
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12794c8c3f4d1c34e83f19803497e153
-      internalID: -1344785813
+      spriteID: 89da65996591c8d46b038c8bbf514812
+      internalID: -1353289765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_7
+      name: Velocidad_7
       rect:
         serializedVersion: 2
-        x: 678
+        x: 16
         y: 0
-        width: 40
-        height: 62
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b42b663c720cb034aa377ca22dbfba97
-      internalID: -1944389208
+      spriteID: 3bcb30103c4d44d4b8a419794d92428f
+      internalID: -1605300265
       vertices: []
       indices: 
       edges: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Personaje Octavo_0: 1382653375
-      Personaje Octavo_1: 171009097
-      Personaje Octavo_2: 673615054
-      Personaje Octavo_3: -591658196
-      Personaje Octavo_4: -261196513
-      Personaje Octavo_5: -427374107
-      Personaje Octavo_6: -1344785813
-      Personaje Octavo_7: -1944389208
+      Velocidad_0: -1022694144
+      Velocidad_1: -1991369015
+      Velocidad_2: -459097444
+      Velocidad_3: 89895246
+      Velocidad_4: -591047537
+      Velocidad_5: -1725104318
+      Velocidad_6: -1353289765
+      Velocidad_7: -1605300265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

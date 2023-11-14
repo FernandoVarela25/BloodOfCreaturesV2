@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ad7bfad9c3fa0743937e0c6e5f392ac
+guid: f53529b431dc0de44ad114110271b381
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Personaje Octavo_0
+      name: Crecer_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 0
-        width: 40
-        height: 62
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6edea1a5c127bab4c9c84fcb12a02782
-      internalID: 1382653375
+      spriteID: 31d966bf051039b40b93745bddc86dd1
+      internalID: 2080148498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_1
+      name: Crecer_1
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 40
-        height: 62
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 478257e9b62662345a0fcb2376c642b1
-      internalID: 171009097
+      spriteID: d6bf002e02b678748a7b854d679d6acd
+      internalID: 435921647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_2
+      name: Crecer_2
       rect:
         serializedVersion: 2
-        x: 198
-        y: 0
-        width: 40
-        height: 62
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94aebd9b5f163fd40a451621e2346781
-      internalID: 673615054
+      spriteID: e6db4e7f748f6b743b505ec7ad48158c
+      internalID: 2000133900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_3
+      name: Crecer_3
       rect:
         serializedVersion: 2
-        x: 294
-        y: 0
-        width: 40
-        height: 62
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f5bc3cdf06c854428c4652fc0d5453e
-      internalID: -591658196
+      spriteID: c214fecb37f94b74bb49d2389ce25592
+      internalID: -143916015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_4
+      name: Crecer_4
       rect:
         serializedVersion: 2
-        x: 390
-        y: 0
-        width: 40
-        height: 62
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4439902379686444a8fd7b316b2845a1
-      internalID: -261196513
+      spriteID: c9f7f6a3dc235c547990236a5ee22759
+      internalID: -372017513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_5
+      name: Crecer_5
       rect:
         serializedVersion: 2
-        x: 486
-        y: 0
-        width: 40
-        height: 62
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e6fe488b1903f41a4a713f81d68206
-      internalID: -427374107
+      spriteID: 99d8c79bb5ced2d449da85a274dba3c4
+      internalID: 1036237229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_6
+      name: Crecer_6
       rect:
         serializedVersion: 2
-        x: 582
+        x: 0
         y: 0
-        width: 40
-        height: 62
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12794c8c3f4d1c34e83f19803497e153
-      internalID: -1344785813
+      spriteID: fe6d74cd431359a45a326c7e67bb6eeb
+      internalID: 278166336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_7
+      name: Crecer_7
       rect:
         serializedVersion: 2
-        x: 678
+        x: 16
         y: 0
-        width: 40
-        height: 62
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b42b663c720cb034aa377ca22dbfba97
-      internalID: -1944389208
+      spriteID: 0a163efb6aab55e43bd1b014f7e870be
+      internalID: -1293583706
       vertices: []
       indices: 
       edges: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Personaje Octavo_0: 1382653375
-      Personaje Octavo_1: 171009097
-      Personaje Octavo_2: 673615054
-      Personaje Octavo_3: -591658196
-      Personaje Octavo_4: -261196513
-      Personaje Octavo_5: -427374107
-      Personaje Octavo_6: -1344785813
-      Personaje Octavo_7: -1944389208
+      Crecer_0: 2080148498
+      Crecer_1: 435921647
+      Crecer_2: 2000133900
+      Crecer_3: -143916015
+      Crecer_4: -372017513
+      Crecer_5: 1036237229
+      Crecer_6: 278166336
+      Crecer_7: -1293583706
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

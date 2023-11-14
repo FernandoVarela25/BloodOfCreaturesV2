@@ -1,38 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float Speed ;
+    public float Speed;
     public float TimeToLive = 2.0f;
     private float lifeTimer;
     private Rigidbody2D Rigidbody2D;
+    public float cantidadDeDanio = 10f;
+
+    private Vector2 bulletDirection;
 
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-        transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+        transform.localScale = new Vector3(Mathf.Sign(Rigidbody2D.velocity.x) * 0.5f, 0.5f, 1f);
 
-        Vector2 direction = LeslieMovement.shootDirection;
-
-        if (direction != Vector2.zero)
+        if (Rigidbody2D.velocity != Vector2.zero)
         {
-            if (direction.x < 0)
-            {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }
-
-            // Establecer la velocidad directamente en el Rigidbody2D
-            Rigidbody2D.velocity = direction * Speed;
-
             lifeTimer = TimeToLive;
         }
         else
         {
-            // Si la dirección es un vector nulo, destruye la bala inmediatamente
+            // Si la velocidad es cero, destruir la bala inmediatamente
             DestroyBullet();
         }
+    }
+
+    public void Shoot(Vector2 direction, float speed)
+    {
+        Rigidbody2D = GetComponent<Rigidbody2D>();
+        transform.localScale = new Vector3(Mathf.Sign(direction.x) * 0.5f, 0.5f, 1f);
+
+        Rigidbody2D.velocity = direction * speed;
+        lifeTimer = TimeToLive;
     }
 
     private void Update()
@@ -53,6 +53,15 @@ public class BulletScript : MonoBehaviour
         DestroyBullet();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnemigoWolfN enemigo = collision.GetComponent<EnemigoWolfN>();
+        if (enemigo != null)
+        {
+            enemigo.RecibirDanio(cantidadDeDanio);
+            DestroyBullet();
+        }
+    }
 
     public Vector2 GetDirection()
     {
@@ -66,7 +75,6 @@ public class BulletScript : MonoBehaviour
         }
     }
 
-
     public void SetSpeed(float newSpeed)
     {
         Speed = newSpeed;
@@ -75,6 +83,11 @@ public class BulletScript : MonoBehaviour
         {
             Rigidbody2D.velocity = Rigidbody2D.velocity.normalized * Speed;
         }
+    }
+
+    public void InitializeBullet(Vector2 direction)
+    {
+        bulletDirection = direction;
     }
 
     public void DestroyBullet()

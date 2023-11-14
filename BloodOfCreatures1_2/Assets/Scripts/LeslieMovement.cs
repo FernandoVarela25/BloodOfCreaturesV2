@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LeslieMovement : MonoBehaviour
@@ -8,16 +7,26 @@ public class LeslieMovement : MonoBehaviour
     public GameObject BulletPrefab;
     public float Speed;
     public float JumpForce;
+    public float vidaInicial = 100f;
+    private float vidaActual;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
     private Animator Animator;
     private bool Grounded;
     private float LastShoot;
+    private bool estaMuerto = false;
+    public AudioClip shootSound;
+    private AudioSource audioSource;
+    public AudioClip jumpSound;
 
+    public GameObject BarraVida;
+    private bool parpadeando = false;
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        vidaActual = vidaInicial;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -39,15 +48,21 @@ public class LeslieMovement : MonoBehaviour
             Grounded = false;
 
         if (Input.GetKeyDown(KeyCode.W) && Grounded)
+
             Jump();
 
-        // Cambiado de KeyCode.Space a Input.GetMouseButtonDown(0)
-        if (!Animator.GetBool("running") && Input.GetMouseButtonDown(0) && Time.time > LastShoot + 0.25f && Grounded)
+        // Verifica si el jugador está vivo antes de procesar la entrada
+        if (!estaMuerto && vidaActual > 0)
         {
-            Shoot();
-            LastShoot = Time.time;
-            Animator.SetTrigger("disparando");
-            StartCoroutine(ResetShootTrigger());
+            // ... (código existente)
+
+            if (!Animator.GetBool("running") && Input.GetMouseButtonDown(0) && Time.time > LastShoot + 0.25f && Grounded)
+            {
+                Shoot();
+                LastShoot = Time.time;
+                Animator.SetTrigger("disparando");
+                StartCoroutine(ResetShootTrigger());
+            }
         }
     }
 
@@ -60,39 +75,119 @@ public class LeslieMovement : MonoBehaviour
     private void Jump()
     {
         Rigidbody2D.AddForce(Vector2.up * JumpForce);
-    }
 
+        // Reproducir el sonido de salto
+        if (audioSource != null && jumpSound != null)
+        {
+            audioSource.PlayOneShot(jumpSound);
+        }
+    }
     private void Shoot()
     {
-        shootDirection = (transform.localScale.x == -1.0f) ? Vector2.left : Vector2.right;
-        Debug.Log("Shoot Direction: " + shootDirection);
+        Vector2 shootDirection = (transform.localScale.x == -0.5f) ? Vector2.left : Vector2.right;
 
         float offsetX = (shootDirection.x < 0) ? -0.6f : 0.6f;
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position + new Vector3(offsetX, 0.2f, 0f), Quaternion.identity);
-        bullet.transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
+        bullet.GetComponent<BulletScript>().Shoot(shootDirection, Speed);
 
-        Debug.Log("Bullet Created: " + bullet);
-
-        BulletScript bulletScript = bullet.GetComponent<BulletScript>();
-
-        if (bulletScript != null)
+        // Reproducir el sonido de disparo
+        if (audioSource != null && shootSound != null)
         {
-            // Ajusta la velocidad aquí
-            bulletScript.SetSpeed(10.0f);  // Ajusta el valor según tus preferencias
-
-            if (bulletScript.GetDirection() != Vector2.zero)
-            {
-                Debug.Log("Bullet Direction: " + bulletScript.GetDirection());
-            }
+            audioSource.PlayOneShot(shootSound);
         }
-
-        Destroy(bullet, 2.0f);
     }
+
 
     private void FixedUpdate()
     {
         Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
-
     }
+
+    public void RecibirDanio(float cantidadDanio)
+    {
+        if (estaMuerto)
+        {
+            return;
+        }
+
+        vidaActual -= cantidadDanio;
+
+        // Actualiza la barra de vida
+        ActualizarBarraVida();
+
+        Debug.Log("Vida actual del jugador: " + vidaActual);
+
+        if (vidaActual <= 0)
+        {
+            Morir();
+        }
+    }
+
+    void ActualizarBarraVida()
+    {
+        float escalaX = Mathf.Clamp(vidaActual / vidaInicial, 0f, 1f);
+        BarraVida.transform.localScale = new Vector3(escalaX, 1f, 1f);
+    }
+
+    void Morir()
+    {
+        Debug.Log("Jugador muerto");
+
+        estaMuerto = true;
+
+        // Desactiva el collider u otros componentes según sea necesario
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        // Activa la animación "dead" en el Animator
+        Animator.SetBool("dead", true);
+
+        // Inicia la rutina de parpadeo y desaparición
+        StartCoroutine(ParpadeoYDesaparecer());
+    }
+    public void CurarVidaAl100()
+    {
+        // Curar la vida al 100
+        vidaActual = vidaInicial;
+
+        // Actualiza la barra de vida
+        ActualizarBarraVida();
+    }
+    public void AumentarVelocidad()
+    {
+        // Aumenta la velocidad del jugador según tu lógica.
+        Speed *= 1.5f; // Por ejemplo, aumenta la velocidad en un 50%.
+
+        Debug.Log("Velocidad aumentada: " + Speed);
+    }
+
+
+    IEnumerator ParpadeoYDesaparecer()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+
+        if (renderer != null)
+        {
+            parpadeando = true;
+
+            // Parpadeo durante la animación de muerte
+            for (int i = 0; i < 5; i++)
+            {
+                renderer.enabled = !renderer.enabled;
+                yield return new WaitForSeconds(0.2f);
+            }
+
+            // Desactiva el parpadeo
+            parpadeando = false;
+        }
+
+        // Desactiva el objeto después de la animación de muerte
+        gameObject.SetActive(false);
+    }
+
+
 }

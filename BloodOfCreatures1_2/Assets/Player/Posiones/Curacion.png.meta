@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ad7bfad9c3fa0743937e0c6e5f392ac
+guid: 61ce251ae3f803e4ebf176625e09b913
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Personaje Octavo_0
+      name: Curacion_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 0
-        width: 40
-        height: 62
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6edea1a5c127bab4c9c84fcb12a02782
-      internalID: 1382653375
+      spriteID: d96b66183ab01c7409248eb38acede8e
+      internalID: 1188363058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_1
+      name: Curacion_1
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 40
-        height: 62
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 478257e9b62662345a0fcb2376c642b1
-      internalID: 171009097
+      spriteID: 2b913d62492ef7f42afb878d7d9c2dea
+      internalID: 556401795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_2
+      name: Curacion_2
       rect:
         serializedVersion: 2
-        x: 198
-        y: 0
-        width: 40
-        height: 62
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94aebd9b5f163fd40a451621e2346781
-      internalID: 673615054
+      spriteID: 0b1117caf0a14734faa6b86028100550
+      internalID: -2117427026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_3
+      name: Curacion_3
       rect:
         serializedVersion: 2
-        x: 294
-        y: 0
-        width: 40
-        height: 62
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f5bc3cdf06c854428c4652fc0d5453e
-      internalID: -591658196
+      spriteID: a37cf530a58cf8843a8e17561045442f
+      internalID: -1727033682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_4
+      name: Curacion_4
       rect:
         serializedVersion: 2
-        x: 390
-        y: 0
-        width: 40
-        height: 62
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4439902379686444a8fd7b316b2845a1
-      internalID: -261196513
+      spriteID: a64685cdde2a70849ab31e050b545f19
+      internalID: -712053294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_5
+      name: Curacion_5
       rect:
         serializedVersion: 2
-        x: 486
-        y: 0
-        width: 40
-        height: 62
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e6fe488b1903f41a4a713f81d68206
-      internalID: -427374107
+      spriteID: d0f9d96e9f6d72c48ae358a82b8db4aa
+      internalID: 1498807146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_6
+      name: Curacion_6
       rect:
         serializedVersion: 2
-        x: 582
+        x: 0
         y: 0
-        width: 40
-        height: 62
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12794c8c3f4d1c34e83f19803497e153
-      internalID: -1344785813
+      spriteID: c50a1fedca4708f449846ca693d24562
+      internalID: -1915135299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje Octavo_7
+      name: Curacion_7
       rect:
         serializedVersion: 2
-        x: 678
+        x: 16
         y: 0
-        width: 40
-        height: 62
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b42b663c720cb034aa377ca22dbfba97
-      internalID: -1944389208
+      spriteID: 8c941a10ae0abbc419cd3fa19018a53b
+      internalID: 936537670
       vertices: []
       indices: 
       edges: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Personaje Octavo_0: 1382653375
-      Personaje Octavo_1: 171009097
-      Personaje Octavo_2: 673615054
-      Personaje Octavo_3: -591658196
-      Personaje Octavo_4: -261196513
-      Personaje Octavo_5: -427374107
-      Personaje Octavo_6: -1344785813
-      Personaje Octavo_7: -1944389208
+      Curacion_0: 1188363058
+      Curacion_1: 556401795
+      Curacion_2: -2117427026
+      Curacion_3: -1727033682
+      Curacion_4: -712053294
+      Curacion_5: 1498807146
+      Curacion_6: -1915135299
+      Curacion_7: 936537670
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
