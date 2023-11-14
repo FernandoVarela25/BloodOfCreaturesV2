@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-public class VelocidadItem : MonoBehaviour
+
+public class InmunidadItem : MonoBehaviour
 {
     public Animator animator; // Referencia al Animator de las posiciones.
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verifica si el jugador colisionó con el objeto de velocidad.
+        // Verifica si el jugador colisionó con el objeto de inmunidad.
         if (other.CompareTag("Leslie"))
         {
-            // Acciones de velocidad
-            AplicarVelocidad(other.gameObject);
+            // Acciones de activación de inmunidad.
+            ActivarInmunidad(other.gameObject);
 
             // Desactiva el objeto para simular la recolección.
             gameObject.SetActive(false);
@@ -19,20 +18,20 @@ public class VelocidadItem : MonoBehaviour
             // Activa la transición en el Animator de las posiciones.
             if (animator != null)
             {
-                animator.SetBool("RecogerVelocidad", true);
+                animator.SetBool("RecogerInmunidad", true);
             }
         }
     }
 
-    void AplicarVelocidad(GameObject jugador)
+    void ActivarInmunidad(GameObject jugador)
     {
+        // Acciones de activación de inmunidad aquí (por ejemplo, 20 segundos de inmunidad).
         LeslieMovement jugadorScript = jugador.GetComponent<LeslieMovement>();
 
         if (jugadorScript != null)
         {
-            // Modifica el método AumentarVelocidad en LeslieMovement para incluir la duración del efecto.
-            jugadorScript.AumentarVelocidad(20f); // 20 segundos de velocidad
-            Debug.Log("Velocidad aplicada al jugador");
+            jugadorScript.ActivarInmunidad();
+            Debug.Log("Inmunidad activada por 20 segundos");
         }
         else
         {

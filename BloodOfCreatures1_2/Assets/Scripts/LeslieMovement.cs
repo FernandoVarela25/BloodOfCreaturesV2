@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LeslieMovement : MonoBehaviour
 {
@@ -18,15 +19,20 @@ public class LeslieMovement : MonoBehaviour
     public AudioClip shootSound;
     private AudioSource audioSource;
     public AudioClip jumpSound;
-
+    private bool enInmunidad = false;
+    private Animator animator;
     public GameObject BarraVida;
+    private float tiempoRestanteVelocidad = 0f;
     private bool parpadeando = false;
+    private bool enZonaDeMuerte = false;
+
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         vidaActual = vidaInicial;
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -66,6 +72,32 @@ public class LeslieMovement : MonoBehaviour
         }
     }
 
+    public void ActivarInmunidad()
+    {
+        if (!enInmunidad)
+        {
+            enInmunidad = true;
+
+            // Activa el parámetro "RecogerInmunidad" en el Animator
+            if (animator != null)
+            {
+                animator.SetTrigger("RecogerInmunidad");
+            }
+
+            StartCoroutine(DuracionInmunidad());
+            // Aquí puedes agregar cualquier lógica adicional relacionada con la inmunidad.
+        }
+    }
+
+
+    private IEnumerator DuracionInmunidad()
+    {
+        yield return new WaitForSeconds(20f); // 20 segundos de inmunidad
+        enInmunidad = false;
+
+        // Aquí puedes agregar cualquier lógica adicional al final de la inmunidad.
+    }
+
     private IEnumerator ResetShootTrigger()
     {
         yield return new WaitForSeconds(0.5f);
@@ -99,13 +131,33 @@ public class LeslieMovement : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
+        // Reduce el tiempo restante de velocidad en cada FixedUpdate
+        if (tiempoRestanteVelocidad > 0)
+        {
+            tiempoRestanteVelocidad -= Time.fixedDeltaTime;
+
+            // Verifica si el tiempo restante de velocidad ha terminado y restablece la velocidad si es necesario.
+            if (tiempoRestanteVelocidad <= 0)
+            {
+                Speed /= 1.5f; // Restablece la velocidad a su valor original
+                tiempoRestanteVelocidad = 0f;
+                Debug.Log("Velocidad restablecida");
+            }
+        }
+
         Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
     }
 
     public void RecibirDanio(float cantidadDanio)
     {
+        if (enInmunidad)
+        {
+            // No recibe daño durante el estado de inmunidad.
+            return;
+        }
+
         if (estaMuerto)
         {
             return;
@@ -122,6 +174,17 @@ public class LeslieMovement : MonoBehaviour
         {
             Morir();
         }
+    }
+
+    public void AumentarVelocidad(float duracion)
+    {
+        // Aumenta la velocidad del jugador según tu lógica.
+        Speed *= 1.5f; // Por ejemplo, aumenta la velocidad en un 50%.
+
+        // Establece el tiempo restante de velocidad
+        tiempoRestanteVelocidad = duracion;
+
+        Debug.Log("Velocidad aumentada: " + Speed);
     }
 
     void ActualizarBarraVida()
@@ -149,23 +212,6 @@ public class LeslieMovement : MonoBehaviour
         // Inicia la rutina de parpadeo y desaparición
         StartCoroutine(ParpadeoYDesaparecer());
     }
-    public void CurarVidaAl100()
-    {
-        // Curar la vida al 100
-        vidaActual = vidaInicial;
-
-        // Actualiza la barra de vida
-        ActualizarBarraVida();
-    }
-    public void AumentarVelocidad()
-    {
-        // Aumenta la velocidad del jugador según tu lógica.
-        Speed *= 1.5f; // Por ejemplo, aumenta la velocidad en un 50%.
-
-        Debug.Log("Velocidad aumentada: " + Speed);
-    }
-
-
     IEnumerator ParpadeoYDesaparecer()
     {
         Renderer renderer = GetComponent<Renderer>();
@@ -187,7 +233,33 @@ public class LeslieMovement : MonoBehaviour
 
         // Desactiva el objeto después de la animación de muerte
         gameObject.SetActive(false);
+
+        // Carga la nueva escena "GameOver" inmediatamente después de desaparecer
+        SceneManager.LoadScene("GameOver");
     }
 
+  //  IEnumerator CargarEscenaGameOver(float tiempoEspera)
+  //  {
+   //     yield return new WaitForSeconds(tiempoEspera);
+
+       // Carga la escena "GameOver"
+    //    SceneManager.LoadScene("GameOver");
+   // }
+
+    public void CurarVidaAl100()
+    {
+        // Curar la vida al 100
+        vidaActual = vidaInicial;
+
+        // Actualiza la barra de vida
+        ActualizarBarraVida();
+    }
+    public void AumentarVelocidad()
+    {
+        // Aumenta la velocidad del jugador según tu lógica.
+        Speed *= 1.5f; // Por ejemplo, aumenta la velocidad en un 50%.
+
+        Debug.Log("Velocidad aumentada: " + Speed);
+    }
 
 }

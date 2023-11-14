@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Creditos.unity
     guid: 19df5bef8819dc742949af66b873b976
   - enabled: 1
-    path: Assets/Scenes/SeleccionCapitulo.unity
+    path: Assets/Scenes/GameOver.unity
     guid: edd4bb123e3e1ea4fa1a340212383836
   - enabled: 1
     path: Assets/Scenes/Controles.unity
