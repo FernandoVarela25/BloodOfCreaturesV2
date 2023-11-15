@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 12
   TimeToLive: 2
+  cantidadDeDanio: 10
 --- !u!50 &3913705495365231877
 Rigidbody2D:
   serializedVersion: 4

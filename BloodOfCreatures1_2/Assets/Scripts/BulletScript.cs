@@ -55,12 +55,33 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        EnemigoWolfN enemigo = collision.GetComponent<EnemigoWolfN>();
-        if (enemigo != null)
+        // Verifica si el objeto con el que colisiona tiene el tag "NoColision"
+        if (collision.CompareTag("Borde"))
         {
-            enemigo.RecibirDanio(cantidadDeDanio);
-            DestroyBullet();
+            Debug.Log("Colisión con objeto de tag NoColision. Ignorando...");
+            return;  // Ignora la colisión
         }
+
+        Debug.Log("Colisión con: " + collision.gameObject.name);
+
+        Enemigo2D enemigo2D = collision.GetComponent<Enemigo2D>();
+        EnemigoWolfN enemigoWolfN = collision.GetComponent<EnemigoWolfN>();
+
+        if (enemigo2D != null)
+        {
+            Debug.Log("Colisión con Enemigo2D");
+            enemigo2D.RecibirDanio(cantidadDeDanio);
+        }
+
+        if (enemigoWolfN != null)
+        {
+            Debug.Log("Colisión con EnemigoWolfN");
+            enemigoWolfN.RecibirDanio(cantidadDeDanio);
+        }
+
+        // Agrega un mensaje de depuración para verificar la destrucción de la bala
+        Debug.Log("Destruyendo la bala");
+        DestroyBullet();
     }
 
     public Vector2 GetDirection()
