@@ -1,21 +1,19 @@
 using UnityEngine;
+using TMPro;
 
 public class CuracionItem : MonoBehaviour
 {
-    public Animator animator; // Referencia al Animator de las posiciones.
+    public Animator animator;
+    public TextMeshProUGUI textoCuracion;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verifica si el jugador colisionó con el objeto de curación.
         if (other.CompareTag("Leslie"))
         {
-            // Acciones de curación
             CurarJugador(other.gameObject);
-
-            // Desactiva el objeto para simular la recolección.
             gameObject.SetActive(false);
+            MostrarTextoCuracion();
 
-            // Activa la transición en el Animator de las posiciones.
             if (animator != null)
             {
                 animator.SetBool("RecogerCuracion", true);
@@ -25,7 +23,6 @@ public class CuracionItem : MonoBehaviour
 
     void CurarJugador(GameObject jugador)
     {
-        // Acciones de curación aquí (aumenta la salud del jugador al 100).
         LeslieMovement jugadorScript = jugador.GetComponent<LeslieMovement>();
 
         if (jugadorScript != null)
@@ -39,4 +36,20 @@ public class CuracionItem : MonoBehaviour
         }
     }
 
+    void MostrarTextoCuracion()
+    {
+        if (textoCuracion != null)
+        {
+            textoCuracion.text = "Curado al 100%";
+            Invoke("OcultarTextoCuracion", 3f); // Cambia el 2f al tiempo que desees que aparezca el texto.
+        }
+    }
+
+    void OcultarTextoCuracion()
+    {
+        if (textoCuracion != null)
+        {
+            textoCuracion.text = "";
+        }
+    }
 }

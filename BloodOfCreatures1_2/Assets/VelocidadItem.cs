@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 public class VelocidadItem : MonoBehaviour
 {
-    public Animator animator; // Referencia al Animator de las posiciones.
+    public Animator animator;
+    public TextMeshProUGUI textoVelocidad;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verifica si el jugador colisionó con el objeto de velocidad.
         if (other.CompareTag("Leslie"))
         {
-            // Acciones de velocidad
             AplicarVelocidad(other.gameObject);
-
-            // Desactiva el objeto para simular la recolección.
             gameObject.SetActive(false);
+            MostrarTextoVelocidad();
 
-            // Activa la transición en el Animator de las posiciones.
             if (animator != null)
             {
                 animator.SetBool("RecogerVelocidad", true);
@@ -30,13 +29,29 @@ public class VelocidadItem : MonoBehaviour
 
         if (jugadorScript != null)
         {
-            // Modifica el método AumentarVelocidad en LeslieMovement para incluir la duración del efecto.
             jugadorScript.AumentarVelocidad(20f); // 20 segundos de velocidad
             Debug.Log("Velocidad aplicada al jugador");
         }
         else
         {
             Debug.LogWarning("El script LeslieMovement no está presente en el jugador.");
+        }
+    }
+
+    void MostrarTextoVelocidad()
+    {
+        if (textoVelocidad != null)
+        {
+            textoVelocidad.text = "¡Velocidad aumentada!";
+            Invoke("OcultarTextoVelocidad", 2f); // Cambia el 2f al tiempo que desees que aparezca el texto.
+        }
+    }
+
+    void OcultarTextoVelocidad()
+    {
+        if (textoVelocidad != null)
+        {
+            textoVelocidad.text = "";
         }
     }
 }

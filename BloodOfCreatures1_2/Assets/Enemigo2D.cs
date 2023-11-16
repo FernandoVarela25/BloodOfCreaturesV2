@@ -17,6 +17,9 @@ public class Enemigo2D : MonoBehaviour
     public float rango_ataque;
     public GameObject rango;
     public GameObject Hit;
+    public string[] animacionesAtaque = { "attack", "segataque", "terataque" };
+    private float tiempoEsperaEntreAtaques = 3f; // Puedes ajustar este valor según tus preferencias.
+    private float tiempoUltimoAtaque;
 
 
     public Material materialParpadeo;
@@ -118,18 +121,24 @@ public class Enemigo2D : MonoBehaviour
                 {
                     if (!atacando && !ani.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                     {
-                        if (transform.position.x < tarjet.transform.position.x)
+                        // ... (otro código)
+
+                        // Modifica esta sección para manejar el ataque aleatorio
+                        if (Time.time - tiempoUltimoAtaque > tiempoEsperaEntreAtaques)
                         {
-                            transform.rotation = Quaternion.Euler(0, 0, 0);
+                            int indiceAtaque = Random.Range(0, animacionesAtaque.Length);
+                            string animacionAtaque = animacionesAtaque[indiceAtaque];
+
+                            // Desactiva todas las animaciones de ataque antes de iniciar una nueva
+                            ani.SetBool("attack", false);
+                            ani.SetBool("segataque", false);
+                            ani.SetBool("terataque", false);
+
+                            ani.SetBool(animacionAtaque, true);
+                            Debug.Log("Atacando con: " + animacionAtaque);
+
+                            tiempoUltimoAtaque = Time.time;
                         }
-                        else
-                        {
-                            transform.rotation = Quaternion.Euler(0, 180, 0);
-                        }
-                        ani.SetBool("walk", false);
-                        ani.SetBool("run", false);
-                        ani.SetBool("attack", true);
-                        Debug.Log("Atacando");
                     }
                 }
             }
@@ -227,6 +236,28 @@ public class Enemigo2D : MonoBehaviour
     {
         Hit.GetComponent<BoxCollider2D>().enabled = false;
     }
+
+    //public void Final_Anisegataque()
+    //{
+    //    ani.SetBool("segataque", false);
+    //    atacando = false;
+    //    haAtacado = false;
+    //    rango.GetComponent<BoxCollider2D>().enabled = true;
+
+    //}
+
+    //public void ColliderWeaponTrueSegAtaque()
+    //{
+    //    Hit.GetComponent<BoxCollider2D>().enabled = true;
+    //    ani.SetBool("segataque", true);
+    //    Debug.Log("ColliderWeaponTrue - Atacando");
+    //}
+
+    //public void ColliderWeaponFalseSegAtaque()
+    //{
+    //    Hit.GetComponent<BoxCollider2D>().enabled = false;
+    //}
+
 
     void Update()
     {

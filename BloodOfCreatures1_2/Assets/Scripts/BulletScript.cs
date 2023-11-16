@@ -56,9 +56,16 @@ public class BulletScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Verifica si el objeto con el que colisiona tiene el tag "NoColision"
+        if (collision.CompareTag("Leslie"))
+        {
+            Debug.Log("Colisión con objeto de tag Leslie. Ignorando...");
+            return;  // Ignora la colisión
+        }
+
+        // Verifica si el objeto con el que colisiona tiene el tag "Borde"
         if (collision.CompareTag("Borde"))
         {
-            Debug.Log("Colisión con objeto de tag NoColision. Ignorando...");
+            Debug.Log("Colisión con objeto de tag Borde. Ignorando...");
             return;  // Ignora la colisión
         }
 
