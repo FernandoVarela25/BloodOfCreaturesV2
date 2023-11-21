@@ -29,7 +29,7 @@ public class VelocidadItem : MonoBehaviour
 
         if (jugadorScript != null)
         {
-            jugadorScript.AumentarVelocidad(20f); // 20 segundos de velocidad
+            jugadorScript.AumentarVelocidad(5f); // 20 segundos de velocidad
             Debug.Log("Velocidad aplicada al jugador");
         }
         else

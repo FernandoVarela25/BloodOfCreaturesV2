@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Controles.unity
     guid: 10afb09510669c847b30fdca3ff2b6f5
+  - enabled: 1
+    path: Assets/Scenes/Textohistoria.unity
+    guid: d4c7c7518b863474197fc5b886f68f5b
+  - enabled: 1
+    path: Assets/Scenes/CapituloDos.unity
+    guid: 91b01f5023f7ad743958d976e63daf16
   m_configObjects: {}
