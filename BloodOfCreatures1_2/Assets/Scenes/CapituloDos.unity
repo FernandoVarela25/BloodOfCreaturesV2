@@ -627,7 +627,7 @@ Transform:
   m_GameObject: {fileID: 36109012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -8.03, z: 0}
+  m_LocalPosition: {x: -3.5, y: -7.8, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27916,7 +27916,7 @@ Transform:
   m_GameObject: {fileID: 1590014362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -8.03, z: -10}
+  m_LocalPosition: {x: -3.5, y: -7.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31545,10 +31545,11 @@ MonoBehaviour:
   - attack
   - segataque
   - terataque
+  escenaACargar: TextohistoriaTres
   materialParpadeo: {fileID: 0}
   BarraVida: {fileID: 1901988745}
   Dano: 10
-  salud: 200
+  salud: 1
 --- !u!61 &1920290972
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62469,7 +62470,7 @@ Transform:
   m_GameObject: {fileID: 2108170174}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.069768, y: -8.029277, z: -10}
+  m_LocalPosition: {x: 5.0697365, y: -7.79881, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

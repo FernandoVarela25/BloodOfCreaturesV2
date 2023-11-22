@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemigo2D : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Enemigo2D : MonoBehaviour
     public string[] animacionesAtaque = { "attack", "segataque", "terataque" };
     private float tiempoEsperaEntreAtaques = 3f; // Puedes ajustar este valor según tus preferencias.
     private float tiempoUltimoAtaque;
-
+    public string escenaACargar;
 
     public Material materialParpadeo;
     private Material materialOriginal;
@@ -159,11 +160,16 @@ public class Enemigo2D : MonoBehaviour
             Muere();
         }
     }
-
+    void CargarEscena()
+    {
+        // Cargar la escena especificada en escenaACargar
+        UnityEngine.SceneManagement.SceneManager.LoadScene(escenaACargar);
+    }
     void Muere()
     {
         ani.SetBool("dead", true);
         Desaparecer();
+        CargarEscena();
     }
 
     void Desaparecer()
