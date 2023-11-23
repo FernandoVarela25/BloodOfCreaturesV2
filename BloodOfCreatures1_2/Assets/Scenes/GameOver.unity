@@ -439,6 +439,8 @@ GameObject:
   - component: {fileID: 653353257}
   - component: {fileID: 653353256}
   - component: {fileID: 653353255}
+  - component: {fileID: 653353259}
+  - component: {fileID: 653353260}
   m_Layer: 5
   m_Name: VolverEmpezar
   m_TagString: Untagged
@@ -581,6 +583,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653353253}
   m_CullTransparentMesh: 1
+--- !u!114 &653353259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653353253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88847bd91e84c264e81a4219184e2bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &653353260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653353253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3e6b9e8e07fb45ab3ec614e1d6c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &726699074
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,3 +9,4 @@ public class CambioScena : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 }
+

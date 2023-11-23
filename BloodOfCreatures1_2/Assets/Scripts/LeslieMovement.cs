@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LeslieMovement : MonoBehaviour
 {
+    public event EventHandler DeadPlayer;
     public static Vector2 shootDirection;
     public GameObject BulletPrefab;
     public float Speed;
@@ -173,6 +175,7 @@ public class LeslieMovement : MonoBehaviour
         if (vidaActual <= 0)
         {
             Morir();
+            
         }
     }
 
@@ -198,7 +201,7 @@ public class LeslieMovement : MonoBehaviour
         Debug.Log("Jugador muerto");
 
         estaMuerto = true;
-
+        DeadPlayer?.Invoke(this, EventArgs.Empty); //game Over
         // Desactiva el collider u otros componentes según sea necesario
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
@@ -233,9 +236,6 @@ public class LeslieMovement : MonoBehaviour
 
         // Desactiva el objeto después de la animación de muerte
         gameObject.SetActive(false);
-
-        // Carga la nueva escena "GameOver" inmediatamente después de desaparecer
-        SceneManager.LoadScene("GameOver");
     }
 
   //  IEnumerator CargarEscenaGameOver(float tiempoEspera)

@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TextohistoriaDos.unity
     guid: 402c42dd8c7016841b4edad4afdae35b
+  - enabled: 1
+    path: Assets/Scenes/TextoFinal.unity
+    guid: 273c5e15d3685624882410e41108d29a
   m_configObjects: {}

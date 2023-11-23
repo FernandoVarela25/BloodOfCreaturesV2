@@ -6,14 +6,14 @@ public class BulletScript : MonoBehaviour
     public float TimeToLive = 2.0f;
     private float lifeTimer;
     private Rigidbody2D Rigidbody2D;
-    public float cantidadDeDanio = 10f;
+    public float cantidadDeDanio = 20f;
 
     private Vector2 bulletDirection;
 
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-        transform.localScale = new Vector3(Mathf.Sign(Rigidbody2D.velocity.x) * 0.5f, 0.5f, 1f);
+        transform.localScale = new Vector3(Mathf.Sign(Rigidbody2D.velocity.x) * 0.3f, 0.3f, 1f);
 
         if (Rigidbody2D.velocity != Vector2.zero)
         {
@@ -66,6 +66,11 @@ public class BulletScript : MonoBehaviour
         if (collision.CompareTag("Borde"))
         {
             Debug.Log("Colisión con objeto de tag Borde. Ignorando...");
+            return;  // Ignora la colisión
+        }
+        if (collision.CompareTag("Posiones"))
+        {
+            Debug.Log("Colisión con objeto de tag Posiones. Ignorando...");
             return;  // Ignora la colisión
         }
 
